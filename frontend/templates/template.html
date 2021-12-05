@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block title %}{{title}}{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block page %}{{title}}{% endblock %}
+{% block heading %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+
+  <br>
+  <h4>Summary stats </h4>
+<script>
+
+    function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+{%if DF!=None%}
+<button onclick="myFunction()">Collapse/expand table</button>
+<div id="myDIV" class="collapse">
+  {{DF | safe}}
+    </div>
+
+
+
+
+
+  <h4>Comparison Tool</h4>
+<h5>Please enter a UniProt accession identifier , RefSeq accession identifier,  or gene symbol</h5>
+  <form method="POST" action="/protein">
+    <textarea name="textbox"></textarea>
+    <button type="submit" name="submit">Submit</button>
+  </form>
+  {%if comp!=None%}
+
+  {{comp | safe}}
+
+{%else%}
+<h5>Not a valid UniProt/RefSeq accession number or protein name.</h5>
+<h3>please try again!</h3>
+
+  {%endif%}
+
+  {%endif%}
+
+
+
+{% endblock %}
+{% block footer %}
+{{super()}}
+{% endblock %}

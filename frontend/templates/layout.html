@@ -1,0 +1,75 @@
+{% from "macros.html" import nav_link with context %}
+<html>
+  <head>
+    {% block head %}
+      <title>{% block title %}{% endblock %} - Database Comparison  </title>
+    {% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style type="text/css">
+      .container {
+        max-width: 700px;
+      }
+      body { background-color: white; }
+      h4 {font-family:fantasy}
+      h5 {color:red; font-size:15px;}
+
+      h2 {color: red;}
+      h1 {color:Blue; font-size:40px; font-weight: bold;}
+      a {color:brown;}
+
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+    <a class="navbar-brand" href="/">Home</a>
+
+
+
+        </div>
+
+
+
+
+          <form class="navbar-form navbar-left" role="search">
+
+
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+      {% block heading %}
+        <h1>UniProt/RefSeq Comparison </h1>
+      {% endblock %}
+
+      <br>
+      {% block content %}{% endblock %}
+      <br>
+
+      <br>
+      <div class="footer">
+        {% block footer %}
+
+
+          <br>
+          <br>
+          <br>
+        {% endblock %}
+      </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
