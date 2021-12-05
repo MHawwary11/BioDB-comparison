@@ -1,4 +1,3 @@
-# Group 02 
 
 #  Cross Verification of Protein Information
 
